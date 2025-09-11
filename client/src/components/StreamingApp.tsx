@@ -63,11 +63,11 @@ export default function StreamingApp() {
   const [selectedCategory, setSelectedCategory] = useState<string | null>(null);
   const [movieCategories] = useState([
     "Ação", "Comédia", "Drama", "Terror", "Ficção Científica", 
-    "Romance", "Aventura", "Thriller", "Fantasia", "Crime"
+    "Romance", "Aventura", "Thriller", "Fantasia", "Crime", "Animação"
   ]);
   const [seriesCategories] = useState([
     "Drama", "Comédia", "Ação", "Terror", "Ficção Científica", 
-    "Romance", "Thriller", "Fantasia", "Crime", "Sobrenatural"
+    "Romance", "Thriller", "Fantasia", "Crime", "Sobrenatural", "Animação"
   ]);
   const [touchStart, setTouchStart] = useState(0);
   const [touchEnd, setTouchEnd] = useState(0);
