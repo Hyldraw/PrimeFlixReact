@@ -52,7 +52,7 @@ export class MemStorage implements IStorage {
         duration: "108 min",
         seasons: null,
         episodes: null,
-        genre: "Ação",
+        genre: "Animação",
         classification: "10+",
         directors: [
           { name: "Akiva Schaffer", photo: "https://media.themoviedb.org/t/p/w300_and_h450_bestv2/1Om7CQXHoUr4rrVrsmyutDwWfck.jpg" }
@@ -67,8 +67,36 @@ export class MemStorage implements IStorage {
         description: "Stitch, um alienígena, chega ao planeta Terra após fugir de sua prisão e tenta se passar por um cachorro para se camuflar. As coisas mudam quando Lilo, uma travessa menina, o adota de um abrigo de animais. Juntos, eles aprendem os valores da amizade e família.",
         fullDescription: "Stitch, um alienígena, chega ao planeta Terra após fugir de sua prisão e tenta se passar por um cachorro para se camuflar. As coisas mudam quando Lilo, uma travessa menina, o adota de um abrigo de animais. Juntos, eles aprendem os valores da amizade e família.",
         poster: "https://media.themoviedb.org/t/p/w300_and_h450_bestv2/bTnWeKXYU3Fal6rc8Bm4lBcEHSV.jpg",
-        backdrop: "https://media.themoviedb.org/t/p/w533_and_h300_bestv2/7Zx3wDG5bBtcfk8lcnCWDOLM4Y4.jpg",
+        backdrop: "https://fiocondutor.com.pt/wp-content/uploads/2025/05/Lilo-e-Stitch-2025-scaled.webp",
         embed: generateEmbed("tt11655566", "movie"),
+        featured: true,
+        type: "movie"
+      },
+      {
+        id: "tt30017619",
+        title: "Os Caras Malvados 2",
+        year: 2025,
+        rating: "7.1",
+        duration: "104 min",
+        seasons: null,
+        episodes: null,
+        genre: "Animação",
+        classification: "L",
+        creator: null,
+        creatorImage: null,
+        cast: [
+          { name: "Sam Rockwell", photo: "https://media.themoviedb.org/t/p/w138_and_h175_face/vYpWxV0bnUgKo7SdasfGP9HttUq.jpg" },
+          { name: "Marc Maron", photo: "https://media.themoviedb.org/t/p/w138_and_h175_face/h4vTBdmRPYioXM1dtVYMeILiasB.jpg" },
+          { name: "Awkwafina", photo: "https://media.themoviedb.org/t/p/w138_and_h175_face/l5AKkg3H1QhMuXmTTmq1EyjyiRb.jpg" }
+          { name: "Craig Robinson", photo: "https://media.themoviedb.org/t/p/w138_and_h175_face/mTyTrOWUSOBJMOlDpnd4OYx7FlJ.jpg" }
+          { name: "Anthony Ramos", photo: "https://media.themoviedb.org/t/p/w138_and_h175_face/2Stnm8PQI7xHkVwINb4MhS7LOuR.jpg" }
+          { name: "Zazie Beetz", photo: "https://media.themoviedb.org/t/p/w138_and_h175_face/xDOXOWgflBi8xAdxiAusrynHdAk.jpg" }
+        ],
+        description: "Os agora reformados Bad Guys estão tentando (muito, muito mesmo) ser bons, mas em vez disso se veem sequestrados para um assalto de alto risco e alcance mundial, arquitetado por uma nova equipe de criminosos que eles nunca imaginaram: as Bad Girls.",
+        fullDescription: "Os agora reformados Bad Guys estão tentando (muito, muito mesmo) ser bons, mas em vez disso se veem sequestrados para um assalto de alto risco e alcance mundial, arquitetado por uma nova equipe de criminosos que eles nunca imaginaram: as Bad Girls.",
+        poster: "https://media.themoviedb.org/t/p/w300_and_h450_bestv2/dbpNAldCtWjotI4vEiphPrz8DJh.jpg",
+        backdrop: "https://m.media-amazon.com/images/S/pv-target-images/3bd073df30f7d1b6922779b2c91431494167e9e0fc3965519e88c7c9b8842534._SX1080_FMjpg_.jpg",
+        embed: generateEmbed("tt30017619", "movie"),
         featured: true,
         type: "movie"
       },
@@ -136,7 +164,7 @@ export class MemStorage implements IStorage {
         duration: "95 min",
         seasons: null,
         episodes: null,
-        genre: "Ação",
+        genre: "Animação",
         classification: "10+",
         creator: null,
         creatorImage: null,
@@ -148,7 +176,7 @@ export class MemStorage implements IStorage {
         description: "Quando não estão lotando estádios, as estrelas do K-pop Rumi, Mira e Zoey usam seus poderes secretos para proteger os fãs contra ameaças sobrenaturais.",
         fullDescription: "Quando não estão lotando estádios, as estrelas do K-pop Rumi, Mira e Zoey usam seus poderes secretos para proteger os fãs contra ameaças sobrenaturais.",
         poster: "https://media.themoviedb.org/t/p/w300_and_h450_bestv2/gbdMa7woiuF7IiEB5Spwv5od4oo.jpg",
-        backdrop: "https://media.themoviedb.org/t/p/w500_and_h282_face/rJjhOuRFldNF0OWSuSk4PiCLmeA.jpg",
+        backdrop: "https://variety.com/wp-content/uploads/2025/06/Kpop-Demon-Hunters-.jpg?crop=170px%2C0px%2C1200px%2C800px&resize=1000%2C667",
         embed: generateEmbed("tt14205554", "movie"),
         featured: true,
         type: "movie"
