@@ -1,0 +1,611 @@
+import React, { useState, useEffect } from 'react';
+import { Search, Play, Star, Clock, Calendar, X, Menu, User, Home, Tv, Film, BookOpen, Heart, ArrowLeft, Info, Plus, Share } from 'lucide-react';
+
+const StreamFlix = () => {
+  const [selectedContent, setSelectedContent] = useState(null);
+  const [showPlayer, setShowPlayer] = useState(false);
+  const [searchTerm, setSearchTerm] = useState('');
+  const [activeCategory, setActiveCategory] = useState('home');
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [currentView, setCurrentView] = useState('home'); // 'home' ou 'details'
+
+  // Dados dos filmes e séries
+  const movies = [
+    {
+      id: 1,
+      title: "Avatar: O Caminho da Água",
+      year: 2022,
+      rating: 8.1,
+      duration: "192 min",
+      genre: "Ficção Científica",
+      classification: "12+",
+      director: "James Cameron",
+      cast: ["Sam Worthington", "Zoe Saldana", "Sigourney Weaver"],
+      description: "Jake Sully vive com sua nova família formada no planeta de Pandora. Quando uma ameaça familiar retorna para terminar o que foi iniciado anteriormente, Jake deve trabalhar com Neytiri e o exército da raça Na'vi para proteger seu planeta.",
+      fullDescription: "Mais de uma década depois dos eventos do primeiro filme, Avatar: O Caminho da Água conta a história da família Sully (Jake, Neytiri e seus filhos), os problemas que os perseguem, até onde vão para se manter em segurança, as batalhas que lutam para se manter vivos e as tragédias que suportam. Ambientado no mundo deslumbrante de Pandora, James Cameron leva o público numa jornada emocionante e de tirar o fôlego.",
+      poster: "https://images.unsplash.com/photo-1534809027769-b00d750a6d09?w=400&h=600&fit=crop",
+      backdrop: "https://images.unsplash.com/photo-1534809027769-b00d750a6d09?w=1200&h=600&fit=crop",
+      embed: "https://drive.google.com/file/d/1234567890/preview",
+      featured: true,
+      type: "movie"
+    },
+    {
+      id: 2,
+      title: "Top Gun: Maverick",
+      year: 2022,
+      rating: 8.5,
+      duration: "131 min",
+      genre: "Ação",
+      classification: "14+",
+      director: "Joseph Kosinski",
+      cast: ["Tom Cruise", "Miles Teller", "Jennifer Connelly"],
+      description: "Depois de mais de 30 anos de serviço como um dos principais aviadores da Marinha, Pete 'Maverick' Mitchell está de volta, rompendo os limites como um piloto de testes corajoso.",
+      fullDescription: "Depois de mais de 30 anos de serviço como um dos principais aviadores da Marinha, Pete 'Maverick' Mitchell está de volta, rompendo os limites como um piloto de testes corajoso e esquivando-se do avanço de patente que o colocaria em terra. Treinando graduados da TOPGUN para uma missão especializada, diferente de qualquer coisa que um piloto vivo já viu, Maverick encontra Bradley Rooster Bradshaw, filho de seu falecido amigo Nick Goose Bradshaw.",
+      poster: "https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=400&h=600&fit=crop",
+      backdrop: "https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=1200&h=600&fit=crop",
+      embed: "https://drive.google.com/file/d/0987654321/preview",
+      type: "movie"
+    },
+    {
+      id: 3,
+      title: "Duna",
+      year: 2021,
+      rating: 8.0,
+      duration: "155 min",
+      genre: "Ficção Científica",
+      classification: "14+",
+      director: "Denis Villeneuve",
+      cast: ["Timothée Chalamet", "Rebecca Ferguson", "Oscar Isaac"],
+      description: "Paul Atreides, um jovem brilhante e talentoso nascido com um grande destino além de sua compreensão, deve viajar para o planeta mais perigoso do universo para garantir o futuro de sua família e seu povo.",
+      fullDescription: "Duna conta a história de Paul Atreides, um jovem brilhante e talentoso nascido com um grande destino além de sua compreensão, que deve viajar para o planeta mais perigoso do universo para garantir o futuro de sua família e seu povo. Quando forças malévolas explodem em conflito sobre o suprimento exclusivo do planeta da substância mais preciosa existente, apenas aqueles que podem conquistar seus medos sobreviverão.",
+      poster: "https://images.unsplash.com/photo-1446776653964-20c1d3a81b06?w=400&h=600&fit=crop",
+      backdrop: "https://images.unsplash.com/photo-1446776653964-20c1d3a81b06?w=1200&h=600&fit=crop",
+      embed: "https://drive.google.com/file/d/1122334455/preview",
+      type: "movie"
+    },
+    {
+      id: 4,
+      title: "Pantera Negra: Wakanda Para Sempre",
+      year: 2022,
+      rating: 7.8,
+      duration: "161 min",
+      genre: "Ação",
+      classification: "12+",
+      director: "Ryan Coogler",
+      cast: ["Letitia Wright", "Angela Bassett", "Tenoch Huerta"],
+      description: "A rainha Ramonda, Shuri, M'Baku, Okoye e as Dora Milaje lutam para proteger sua nação das potências mundiais intervenientes após a morte do rei T'Challa.",
+      fullDescription: "A rainha Ramonda, Shuri, M'Baku, Okoye e as Dora Milaje lutam para proteger sua nação das potências mundiais que intervêm após a morte do rei T'Challa. Quando Namor, rei de uma nação subaquática escondida, ameaça Wakanda, os heróis devem forjar um novo caminho para o reino de Wakanda. Apresentando Ironheart, aliada de longa data dos Vingadores e Wakanda.",
+      poster: "https://images.unsplash.com/photo-1635805737707-575885ab0820?w=400&h=600&fit=crop",
+      backdrop: "https://images.unsplash.com/photo-1635805737707-575885ab0820?w=1200&h=600&fit=crop",
+      embed: "https://drive.google.com/file/d/5566778899/preview",
+      type: "movie"
+    }
+  ];
+
+  const series = [
+    {
+      id: 5,
+      title: "The Witcher",
+      year: 2019,
+      rating: 8.2,
+      seasons: 3,
+      episodes: 24,
+      genre: "Fantasia",
+      classification: "16+",
+      creator: "Lauren Schmidt",
+      cast: ["Henry Cavill", "Anya Chalotra", "Freya Allan"],
+      description: "Geralt de Rivia, um caçador de monstros solitário, luta para encontrar seu lugar em um mundo onde as pessoas frequentemente se mostram mais perversas que as bestas.",
+      fullDescription: "Baseada na série de livros best-seller, The Witcher é uma saga épica sobre família e destino. É a história de três pessoas cujos destinos estão ligados no vasto mundo do Continente, onde humanos, elfos, halflings, gnomos e monstros batalham para sobreviver e prosperar, e onde o bem e o mal não são facilmente identificados.",
+      poster: "https://images.unsplash.com/photo-1518709268805-4e9042af2176?w=400&h=600&fit=crop",
+      backdrop: "https://images.unsplash.com/photo-1518709268805-4e9042af2176?w=1200&h=600&fit=crop",
+      embed: "https://drive.google.com/embeddedfolderview?id=1234567890#grid",
+      featured: true,
+      type: "series"
+    },
+    {
+      id: 6,
+      title: "Stranger Things",
+      year: 2016,
+      rating: 8.7,
+      seasons: 4,
+      episodes: 42,
+      genre: "Ficção Científica",
+      classification: "14+",
+      creator: "Irmãos Duffer",
+      cast: ["Millie Bobby Brown", "Finn Wolfhard", "David Harbour"],
+      description: "Quando um garoto desaparece, sua mãe, um chefe de polícia e seus amigos devem confrontar forças aterrorizantes para trazê-lo de volta.",
+      fullDescription: "Em 1980, na cidade fictícia de Hawkins, Indiana, um grupo de amigos testemunha forças sobrenaturais e experimentos governamentais secretos. Para resolver esse mistério, eles terão que enfrentar seus piores medos e descobrir segredos sombrios. Stranger Things é uma carta de amor aos clássicos sobrenaturais dos anos 80.",
+      poster: "https://images.unsplash.com/photo-1534447677768-be436bb09401?w=400&h=600&fit=crop",
+      backdrop: "https://images.unsplash.com/photo-1534447677768-be436bb09401?w=1200&h=600&fit=crop",
+      embed: "https://drive.google.com/embeddedfolderview?id=0987654321#grid",
+      type: "series"
+    },
+    {
+      id: 7,
+      title: "House of the Dragon",
+      year: 2022,
+      rating: 8.5,
+      seasons: 2,
+      episodes: 18,
+      genre: "Drama",
+      classification: "18+",
+      creator: "Ryan Condal",
+      cast: ["Paddy Considine", "Emma D'Arcy", "Matt Smith"],
+      description: "200 anos antes dos eventos de Game of Thrones, a Casa Targaryen está no auge de seu poder, com mais de 15 dragões sob seu comando.",
+      fullDescription: "Baseada no livro 'Fogo & Sangue' de George R.R. Martin, House of the Dragon se passa 200 anos antes dos eventos de Game of Thrones e conta a história dos Targaryen. A série se concentra na guerra civil targaryen conhecida como 'Dança dos Dragões', que ocorreu cerca de 300 anos antes dos eventos retratados em Game of Thrones.",
+      poster: "https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=400&h=600&fit=crop",
+      backdrop: "https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=1200&h=600&fit=crop",
+      embed: "https://drive.google.com/embeddedfolderview?id=1122334455#grid",
+      type: "series"
+    },
+    {
+      id: 8,
+      title: "Wednesday",
+      year: 2022,
+      rating: 8.1,
+      seasons: 1,
+      episodes: 8,
+      genre: "Comédia",
+      classification: "14+",
+      creator: "Alfred Gough",
+      cast: ["Jenna Ortega", "Catherine Zeta-Jones", "Luis Guzmán"],
+      description: "Wednesday Addams é uma estudante na Nevermore Academy, onde tenta dominar sua habilidade psíquica emergente, impedir uma onda de assassinatos e resolver o mistério sobrenatural.",
+      fullDescription: "Uma série de mistério sobrenatural que segue Wednesday Addams em seus anos como estudante na Nevermore Academy. Wednesday tenta dominar sua habilidade psíquica emergente, frustrar um monstruoso surto de assassinatos que aterrorizou a cidade local, e resolver o mistério sobrenatural que envolveu seus pais há 25 anos - tudo enquanto navega em suas novas e muito emaranhadas relações na Nevermore.",
+      poster: "https://images.unsplash.com/photo-1551698618-1dfe5d97d256?w=400&h=600&fit=crop",
+      backdrop: "https://images.unsplash.com/photo-1551698618-1dfe5d97d256?w=1200&h=600&fit=crop",
+      embed: "https://drive.google.com/embeddedfolderview?id=5566778899#grid",
+      type: "series"
+    }
+  ];
+
+  const allContent = [...movies, ...series];
+  const featuredContent = allContent.filter(item => item.featured);
+
+  const filteredContent = allContent.filter(item =>
+    item.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
+    item.genre.toLowerCase().includes(searchTerm.toLowerCase())
+  );
+
+  const getContentByCategory = () => {
+    switch(activeCategory) {
+      case 'movies':
+        return movies;
+      case 'series':
+        return series;
+      case 'mylist':
+        return []; // Implementar lista do usuário
+      default:
+        return allContent;
+    }
+  };
+
+  const openDetails = (content) => {
+    setSelectedContent(content);
+    setCurrentView('details');
+  };
+
+  const openPlayer = () => {
+    setShowPlayer(true);
+  };
+
+  const closePlayer = () => {
+    setShowPlayer(false);
+  };
+
+  const goBack = () => {
+    setCurrentView('home');
+    setSelectedContent(null);
+  };
+
+  // Página de detalhes
+  if (currentView === 'details' && selectedContent) {
+    return (
+      <div className="min-h-screen bg-black text-white">
+        {/* Header da página de detalhes */}
+        <div className="relative h-screen">
+          <div 
+            className="absolute inset-0 bg-cover bg-center"
+            style={{ backgroundImage: `url(${selectedContent.backdrop})` }}
+          >
+            <div className="absolute inset-0 bg-gradient-to-r from-black via-black/70 to-transparent" />
+          </div>
+          
+          {/* Botão voltar */}
+          <button 
+            onClick={goBack}
+            className="absolute top-6 left-6 z-20 flex items-center space-x-2 bg-black/60 backdrop-blur-sm px-4 py-2 rounded-full hover:bg-black/80 transition-colors"
+          >
+            <ArrowLeft size={20} />
+            <span>Voltar</span>
+          </button>
+
+          <div className="relative z-10 flex items-center h-full px-6 md:px-12">
+            <div className="max-w-4xl">
+              <h1 className="text-4xl md:text-6xl font-bold mb-6">
+                {selectedContent.title}
+              </h1>
+              
+              {/* Informações principais */}
+              <div className="flex flex-wrap items-center gap-4 mb-6 text-sm md:text-base">
+                <span className="flex items-center space-x-1 bg-red-600 px-3 py-1 rounded-full">
+                  <Star className="text-white" size={16} />
+                  <span className="font-semibold">{selectedContent.rating}</span>
+                </span>
+                <span className="bg-gray-800 px-3 py-1 rounded-full">{selectedContent.year}</span>
+                <span className="bg-gray-800 px-3 py-1 rounded-full">{selectedContent.classification}</span>
+                <span className="bg-gray-800 px-3 py-1 rounded-full">{selectedContent.genre}</span>
+                {selectedContent.duration && (
+                  <span className="flex items-center space-x-1 bg-gray-800 px-3 py-1 rounded-full">
+                    <Clock size={16} />
+                    <span>{selectedContent.duration}</span>
+                  </span>
+                )}
+                {selectedContent.seasons && (
+                  <span className="bg-gray-800 px-3 py-1 rounded-full">
+                    {selectedContent.seasons} temporadas • {selectedContent.episodes} episódios
+                  </span>
+                )}
+              </div>
+
+              {/* Descrição */}
+              <p className="text-lg md:text-xl text-gray-300 mb-8 max-w-3xl leading-relaxed">
+                {selectedContent.fullDescription}
+              </p>
+
+              {/* Botões de ação */}
+              <div className="flex flex-wrap gap-4 mb-8">
+                <button 
+                  onClick={openPlayer}
+                  className="flex items-center space-x-2 bg-white text-black px-8 py-4 rounded-lg font-semibold hover:bg-gray-200 transition-colors text-lg"
+                >
+                  <Play size={24} />
+                  <span>Assistir Agora</span>
+                </button>
+                <button className="flex items-center space-x-2 bg-gray-600/80 px-8 py-4 rounded-lg font-semibold hover:bg-gray-600 transition-colors text-lg">
+                  <Plus size={24} />
+                  <span>Minha Lista</span>
+                </button>
+                <button className="flex items-center space-x-2 bg-gray-600/80 px-8 py-4 rounded-lg font-semibold hover:bg-gray-600 transition-colors text-lg">
+                  <Share size={24} />
+                  <span>Compartilhar</span>
+                </button>
+              </div>
+
+              {/* Informações adicionais */}
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl">
+                <div>
+                  <h3 className="text-xl font-semibold mb-3 text-gray-300">
+                    {selectedContent.type === 'movie' ? 'Diretor' : 'Criador'}
+                  </h3>
+                  <p className="text-white">
+                    {selectedContent.type === 'movie' ? selectedContent.director : selectedContent.creator}
+                  </p>
+                </div>
+                <div>
+                  <h3 className="text-xl font-semibold mb-3 text-gray-300">Elenco Principal</h3>
+                  <p className="text-white">{selectedContent.cast.join(', ')}</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        {/* Player Modal */}
+        {showPlayer && (
+          <div className="fixed inset-0 bg-black/95 z-50 flex items-center justify-center p-4">
+            <div className="w-full max-w-6xl bg-gray-900 rounded-lg overflow-hidden">
+              <div className="flex items-center justify-between p-4 border-b border-gray-700">
+                <h3 className="text-xl font-bold">{selectedContent.title}</h3>
+                <button 
+                  onClick={closePlayer}
+                  className="p-2 hover:bg-gray-700 rounded-full transition-colors"
+                >
+                  <X size={20} />
+                </button>
+              </div>
+              <div className="aspect-video">
+                <iframe
+                  src={selectedContent.embed}
+                  className="w-full h-full"
+                  frameBorder="0"
+                  allow="autoplay; encrypted-media"
+                  allowFullScreen
+                  title={selectedContent.title}
+                />
+              </div>
+              <div className="p-4">
+                <div className="flex items-center space-x-4 mb-2">
+                  <span className="flex items-center space-x-1">
+                    <Star className="text-yellow-400" size={16} />
+                    <span>{selectedContent.rating}</span>
+                  </span>
+                  <span>{selectedContent.year}</span>
+                  <span>{selectedContent.classification}</span>
+                  <span>{selectedContent.genre}</span>
+                  {selectedContent.duration && (
+                    <span className="flex items-center space-x-1">
+                      <Clock size={16} />
+                      <span>{selectedContent.duration}</span>
+                    </span>
+                  )}
+                  {selectedContent.seasons && (
+                    <span>{selectedContent.seasons} temporadas</span>
+                  )}
+                </div>
+                <p className="text-gray-300 text-sm">{selectedContent.description}</p>
+              </div>
+            </div>
+          </div>
+        )}
+      </div>
+    );
+  }
+
+  // Página principal
+  return (
+    <div className="min-h-screen bg-black text-white">
+      {/* Navigation */}
+      <nav className="fixed top-0 w-full z-50 bg-gradient-to-b from-black/80 to-transparent backdrop-blur-sm">
+        <div className="flex items-center justify-between px-4 md:px-8 py-4">
+          <div className="flex items-center space-x-8">
+            <h1 className="text-2xl md:text-3xl font-bold bg-gradient-to-r from-red-500 to-pink-500 bg-clip-text text-transparent">
+              StreamFlix
+            </h1>
+            
+            <div className="hidden md:flex space-x-6">
+              <button 
+                onClick={() => setActiveCategory('home')}
+                className={`flex items-center space-x-2 px-3 py-2 rounded-lg transition-all ${
+                  activeCategory === 'home' ? 'bg-red-600 text-white' : 'hover:bg-white/10'
+                }`}
+              >
+                <Home size={18} />
+                <span>Início</span>
+              </button>
+              <button 
+                onClick={() => setActiveCategory('movies')}
+                className={`flex items-center space-x-2 px-3 py-2 rounded-lg transition-all ${
+                  activeCategory === 'movies' ? 'bg-red-600 text-white' : 'hover:bg-white/10'
+                }`}
+              >
+                <Film size={18} />
+                <span>Filmes</span>
+              </button>
+              <button 
+                onClick={() => setActiveCategory('series')}
+                className={`flex items-center space-x-2 px-3 py-2 rounded-lg transition-all ${
+                  activeCategory === 'series' ? 'bg-red-600 text-white' : 'hover:bg-white/10'
+                }`}
+              >
+                <Tv size={18} />
+                <span>Séries</span>
+              </button>
+              <button 
+                onClick={() => setActiveCategory('mylist')}
+                className={`flex items-center space-x-2 px-3 py-2 rounded-lg transition-all ${
+                  activeCategory === 'mylist' ? 'bg-red-600 text-white' : 'hover:bg-white/10'
+                }`}
+              >
+                <Heart size={18} />
+                <span>Minha Lista</span>
+              </button>
+            </div>
+          </div>
+
+          <div className="flex items-center space-x-4">
+            <div className="relative hidden md:block">
+              <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400" size={18} />
+              <input
+                type="text"
+                placeholder="Buscar filmes, séries..."
+                value={searchTerm}
+                onChange={(e) => setSearchTerm(e.target.value)}
+                className="pl-10 pr-4 py-2 bg-black/60 border border-gray-600 rounded-full focus:outline-none focus:border-red-500 transition-colors"
+              />
+            </div>
+            <button className="p-2 hover:bg-white/10 rounded-full transition-colors">
+              <User size={20} />
+            </button>
+            <button 
+              onClick={() => setIsMenuOpen(!isMenuOpen)}
+              className="md:hidden p-2 hover:bg-white/10 rounded-full transition-colors"
+            >
+              <Menu size={20} />
+            </button>
+          </div>
+        </div>
+
+        {/* Mobile Menu */}
+        {isMenuOpen && (
+          <div className="md:hidden bg-black/95 backdrop-blur-sm border-t border-gray-800">
+            <div className="px-4 py-4 space-y-2">
+              <button 
+                onClick={() => { setActiveCategory('home'); setIsMenuOpen(false); }}
+                className="flex items-center space-x-2 w-full px-3 py-2 rounded-lg hover:bg-white/10 transition-colors"
+              >
+                <Home size={18} />
+                <span>Início</span>
+              </button>
+              <button 
+                onClick={() => { setActiveCategory('movies'); setIsMenuOpen(false); }}
+                className="flex items-center space-x-2 w-full px-3 py-2 rounded-lg hover:bg-white/10 transition-colors"
+              >
+                <Film size={18} />
+                <span>Filmes</span>
+              </button>
+              <button 
+                onClick={() => { setActiveCategory('series'); setIsMenuOpen(false); }}
+                className="flex items-center space-x-2 w-full px-3 py-2 rounded-lg hover:bg-white/10 transition-colors"
+              >
+                <Tv size={18} />
+                <span>Séries</span>
+              </button>
+            </div>
+          </div>
+        )}
+      </nav>
+
+      {/* Hero Section */}
+      {activeCategory === 'home' && featuredContent.length > 0 && (
+        <div className="relative h-screen">
+          <div 
+            className="absolute inset-0 bg-cover bg-center"
+            style={{ backgroundImage: `url(${featuredContent[0].backdrop})` }}
+          >
+            <div className="absolute inset-0 bg-gradient-to-r from-black via-black/70 to-transparent" />
+          </div>
+          
+          <div className="relative z-10 flex items-center h-full px-4 md:px-8">
+            <div className="max-w-2xl">
+              <h2 className="text-4xl md:text-6xl font-bold mb-4">
+                {featuredContent[0].title}
+              </h2>
+              <div className="flex items-center space-x-4 mb-4 text-sm md:text-base">
+                <span className="flex items-center space-x-1">
+                  <Star className="text-yellow-400" size={16} />
+                  <span>{featuredContent[0].rating}</span>
+                </span>
+                <span>{featuredContent[0].year}</span>
+                <span>{featuredContent[0].genre}</span>
+                {featuredContent[0].duration && (
+                  <span className="flex items-center space-x-1">
+                    <Clock size={16} />
+                    <span>{featuredContent[0].duration}</span>
+                  </span>
+                )}
+                {featuredContent[0].seasons && (
+                  <span>{featuredContent[0].seasons} temporadas</span>
+                )}
+              </div>
+              <p className="text-gray-300 mb-8 text-sm md:text-base">
+                {featuredContent[0].description}
+              </p>
+              <div className="flex space-x-4">
+                <button 
+                  onClick={() => openDetails(featuredContent[0])}
+                  className="flex items-center space-x-2 bg-white text-black px-6 py-3 rounded-lg font-semibold hover:bg-gray-200 transition-colors"
+                >
+                  <Play size={20} />
+                  <span>Assistir</span>
+                </button>
+                <button 
+                  onClick={() => openDetails(featuredContent[0])}
+                  className="flex items-center space-x-2 bg-gray-600/80 px-6 py-3 rounded-lg font-semibold hover:bg-gray-600 transition-colors"
+                >
+                  <Info size={20} />
+                  <span>Mais Informações</span>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      )}
+
+      {/* Content Grid */}
+      <div className={`px-4 md:px-8 ${activeCategory === 'home' ? 'py-8' : 'pt-24 pb-8'}`}>
+        {searchTerm ? (
+          <div>
+            <h3 className="text-2xl font-bold mb-6">
+              Resultados da busca por "{searchTerm}"
+            </h3>
+            <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 gap-4">
+              {filteredContent.map((item) => (
+                <ContentCard key={item.id} item={item} onClick={() => openDetails(item)} />
+              ))}
+            </div>
+          </div>
+        ) : (
+          <div className="space-y-12">
+            {activeCategory === 'home' && (
+              <>
+                <ContentSection title="Em Destaque" items={featuredContent} onItemClick={openDetails} />
+                <ContentSection title="Filmes Populares" items={movies} onItemClick={openDetails} />
+                <ContentSection title="Séries em Alta" items={series} onItemClick={openDetails} />
+              </>
+            )}
+            
+            {activeCategory === 'movies' && (
+              <ContentSection title="Todos os Filmes" items={movies} onItemClick={openDetails} />
+            )}
+            
+            {activeCategory === 'series' && (
+              <ContentSection title="Todas as Séries" items={series} onItemClick={openDetails} />
+            )}
+            
+            {activeCategory === 'mylist' && (
+              <div className="text-center py-20">
+                <Heart size={64} className="mx-auto mb-4 text-gray-600" />
+                <h3 className="text-2xl font-bold mb-2">Sua lista está vazia</h3>
+                <p className="text-gray-400">Adicione filmes e séries à sua lista pessoal</p>
+              </div>
+            )}
+          </div>
+        )}
+      </div>
+    </div>
+  );
+};
+
+const ContentSection = ({ title, items, onItemClick }) => (
+  <div>
+    <h3 className="text-xl md:text-2xl font-bold mb-4">{title}</h3>
+    <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 gap-4">
+      {items.map((item) => (
+        <ContentCard key={item.id} item={item} onClick={() => onItemClick(item)} />
+      ))}
+    </div>
+  </div>
+);
+
+const ContentCard = ({ item, onClick }) => (
+  <div 
+    className="group cursor-pointer transform transition-all duration-300 hover:scale-105"
+    onClick={onClick}
+  >
+    <div className="relative aspect-[2/3] rounded-lg overflow-hidden bg-gray-800">
+      <img
+        src={item.poster}
+        alt={item.title}
+        className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300"
+      />
+      <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+      <div className="absolute bottom-0 left-0 right-0 p-3 transform translate-y-full group-hover:translate-y-0 transition-transform duration-300">
+        <h4 className="font-semibold text-sm mb-1 truncate">{item.title}</h4>
+        <div className="flex items-center justify-between text-xs text-gray-300">
+          <span>{item.year}</span>
+          <span className="flex items-center space-x-1">
+            <Star className="text-yellow-400" size={12} />
+            <span>{item.rating}</span>
+          </span>
+        </div>
+        <div className="flex items-center justify-between text-xs text-gray-300 mt-1">
+          <span>{item.classification}</span>
+          {item.duration && <span>{item.duration}</span>}
+          {item.seasons && <span>{item.seasons} temp.</span>}
+        </div>
+      </div>
+      <div className="absolute top-2 right-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+        <div className="bg-black/60 rounded-full p-2">
+          <Play size={16} className="text-white" />
+        </div>
+      </div>
+      
+      {/* Badge de classificação */}
+      <div className="absolute top-2 left-2">
+        <span className="bg-red-600 text-white text-xs px-2 py-1 rounded font-semibold">
+          {item.classification}
+        </span>
+      </div>
+      
+      {/* Badge de tipo */}
+      <div className="absolute bottom-2 right-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+        <span className="bg-gray-900/80 text-white text-xs px-2 py-1 rounded flex items-center space-x-1">
+          {item.type === 'movie' ? <Film size={12} /> : <Tv size={12} />}
+          <span>{item.type === 'movie' ? 'Filme' : 'Série'}</span>
+        </span>
+      </div>
+    </div>
+  </div>
+);
+
+export default StreamFlix;

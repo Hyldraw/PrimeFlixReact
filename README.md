@@ -1,1 +1,1 @@
-# PrimeFlixReact
+# PrimeFlix
