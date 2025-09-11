@@ -184,6 +184,34 @@ export class MemStorage implements IStorage {
         featured: false,
         type: "movie"
       },
+            {
+        id: "tt15398776",
+        title: "Oppenheimer",
+        year: 2023,
+        rating: "8.3",
+        duration: "180 min",
+        seasons: null,
+        episodes: null,
+        genre: "Ação",
+        classification: "14+",
+        directors: [
+          { name: "Christopher Nolan", photo: "https://media.themoviedb.org/t/p/w300_and_h450_bestv2/xuAIuYSmsUzKlUMBFGVZaWsY3DZ.jpg" }
+        ],
+        creator: null,
+        creatorImage: null,
+        cast: [
+          { name: "Cillian Murphy", photo: "https://media.themoviedb.org/t/p/w138_and_h175_face/llkbyWKwpfowZ6C8peBjIV9jj99.jpg" },
+          { name: "Emily Blunt", photo: "https://media.themoviedb.org/t/p/w138_and_h175_face/zpJ7pupuNF3W0zTxm6yioGIoxbd.jpg" },
+          { name: "Matt Damon", photo: "https://media.themoviedb.org/t/p/w138_and_h175_face/4KAxONjmVq7qcItdXo38SYtnpul.jpg" }
+        ],
+        description: "A história do físico americano J. Robert Oppenheimer, seu papel no Projeto Manhattan e no desenvolvimento da bomba atômica durante a Segunda Guerra Mundial, e o quanto isso mudaria a história do mundo para sempre.",
+        fullDescription: "A história do físico americano J. Robert Oppenheimer, seu papel no Projeto Manhattan e no desenvolvimento da bomba atômica durante a Segunda Guerra Mundial, e o quanto isso mudaria a história do mundo para sempre.",
+        poster: "https://media.themoviedb.org/t/p/w300_and_h450_bestv2/1OsQJEoSXBjduuCvDOlRhoEUaHu.jpg",
+        backdrop: "https://media.themoviedb.org/t/p/w533_and_h300_bestv2/neeNHeXjMF5fXoCJRsOmkNGC7q.jpg",
+        embed: generateEmbed("tt15398776", "movie"),
+        featured: false,
+        type: "movie"
+      },
       {
         id: "tt9114286",
         title: "Pantera Negra: Wakanda Para Sempre",
