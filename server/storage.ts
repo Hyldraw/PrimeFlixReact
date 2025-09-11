@@ -87,9 +87,9 @@ export class MemStorage implements IStorage {
         cast: [
           { name: "Sam Rockwell", photo: "https://media.themoviedb.org/t/p/w138_and_h175_face/vYpWxV0bnUgKo7SdasfGP9HttUq.jpg" },
           { name: "Marc Maron", photo: "https://media.themoviedb.org/t/p/w138_and_h175_face/h4vTBdmRPYioXM1dtVYMeILiasB.jpg" },
-          { name: "Awkwafina", photo: "https://media.themoviedb.org/t/p/w138_and_h175_face/l5AKkg3H1QhMuXmTTmq1EyjyiRb.jpg" }
-          { name: "Craig Robinson", photo: "https://media.themoviedb.org/t/p/w138_and_h175_face/mTyTrOWUSOBJMOlDpnd4OYx7FlJ.jpg" }
-          { name: "Anthony Ramos", photo: "https://media.themoviedb.org/t/p/w138_and_h175_face/2Stnm8PQI7xHkVwINb4MhS7LOuR.jpg" }
+          { name: "Awkwafina", photo: "https://media.themoviedb.org/t/p/w138_and_h175_face/l5AKkg3H1QhMuXmTTmq1EyjyiRb.jpg" },
+          { name: "Craig Robinson", photo: "https://media.themoviedb.org/t/p/w138_and_h175_face/mTyTrOWUSOBJMOlDpnd4OYx7FlJ.jpg" },
+          { name: "Anthony Ramos", photo: "https://media.themoviedb.org/t/p/w138_and_h175_face/2Stnm8PQI7xHkVwINb4MhS7LOuR.jpg" },
           { name: "Zazie Beetz", photo: "https://media.themoviedb.org/t/p/w138_and_h175_face/xDOXOWgflBi8xAdxiAusrynHdAk.jpg" }
         ],
         description: "Os agora reformados Bad Guys estão tentando (muito, muito mesmo) ser bons, mas em vez disso se veem sequestrados para um assalto de alto risco e alcance mundial, arquitetado por uma nova equipe de criminosos que eles nunca imaginaram: as Bad Girls.",
