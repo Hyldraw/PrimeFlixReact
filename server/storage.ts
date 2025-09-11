@@ -44,6 +44,34 @@ export class MemStorage implements IStorage {
 
   private initializeContent() {
     const sampleContent: Content[] = [
+       {
+        id: "tt11655566",
+        title: "Lilo & Stitch",
+        year: 2025,
+        rating: "6.8",
+        duration: "108 min",
+        seasons: null,
+        episodes: null,
+        genre: "Ação",
+        classification: "10+",
+        directors: [
+          { name: "Akiva Schaffer", photo: "https://media.themoviedb.org/t/p/w300_and_h450_bestv2/1Om7CQXHoUr4rrVrsmyutDwWfck.jpg" }
+        ],
+        creator: null,
+        creatorImage: null,
+        cast: [
+          { name: "Maia Kealoha", photo: "https://media.themoviedb.org/t/p/w138_and_h175_face/jqsKbBF28V2Oq5tKPR5USkNufwC.jpg" },
+          { name: "Sydney Agudong", photo: "https://media.themoviedb.org/t/p/w138_and_h175_face/3K5hJ3meeClHWsPKetqd9qgyveJ.jpg" },
+          { name: "Chris Sanders", photo: "https://media.themoviedb.org/t/p/w138_and_h175_face/6CtrIOCxggJ5eIAWeFQqd4Hs9FP.jpg" }
+        ],
+        description: "Stitch, um alienígena, chega ao planeta Terra após fugir de sua prisão e tenta se passar por um cachorro para se camuflar. As coisas mudam quando Lilo, uma travessa menina, o adota de um abrigo de animais. Juntos, eles aprendem os valores da amizade e família.",
+        fullDescription: "Stitch, um alienígena, chega ao planeta Terra após fugir de sua prisão e tenta se passar por um cachorro para se camuflar. As coisas mudam quando Lilo, uma travessa menina, o adota de um abrigo de animais. Juntos, eles aprendem os valores da amizade e família.",
+        poster: "https://media.themoviedb.org/t/p/w300_and_h450_bestv2/bTnWeKXYU3Fal6rc8Bm4lBcEHSV.jpg",
+        backdrop: "https://media.themoviedb.org/t/p/w533_and_h300_bestv2/7Zx3wDG5bBtcfk8lcnCWDOLM4Y4.jpg",
+        embed: generateEmbed("tt11655566", "movie"),
+        featured: true,
+        type: "movie"
+      },
       {
         id: "tt3402138",
         title: "Corra Que a Polícia Vem Aí!",
@@ -97,6 +125,31 @@ export class MemStorage implements IStorage {
         poster: "https://i.imgur.com/bZo3fGv.jpeg",
         backdrop: "https://i.imgur.com/vjQLuTI.jpeg",
         embed: generateEmbed("tt5950044", "movie"),
+        featured: true,
+        type: "movie"
+      },
+            {
+        id: "tt14205554",
+        title: "Guerreiras do K-Pop",
+        year: 2025,
+        rating: "7.6",
+        duration: "95 min",
+        seasons: null,
+        episodes: null,
+        genre: "Ação",
+        classification: "10+",
+        creator: null,
+        creatorImage: null,
+        cast: [
+          { name: "Arden Cho", photo: "https://media.themoviedb.org/t/p/w138_and_h175_face/uPtfAFoEYeNGRl6n0GdxLPxdM9u.jpg" },
+          { name: "May Hong", photo: "https://media.themoviedb.org/t/p/w138_and_h175_face/hnWIn2hxnJt16j0rDTiqdbG5LQo.jpg" },
+          { name: "Ji-young Yoo", photo: "https://media.themoviedb.org/t/p/w138_and_h175_face/4jgtqpNWhMx8XOKQ9qQJvDdzbxG.jpg" }
+        ],
+        description: "Quando não estão lotando estádios, as estrelas do K-pop Rumi, Mira e Zoey usam seus poderes secretos para proteger os fãs contra ameaças sobrenaturais.",
+        fullDescription: "Quando não estão lotando estádios, as estrelas do K-pop Rumi, Mira e Zoey usam seus poderes secretos para proteger os fãs contra ameaças sobrenaturais.",
+        poster: "https://media.themoviedb.org/t/p/w300_and_h450_bestv2/gbdMa7woiuF7IiEB5Spwv5od4oo.jpg",
+        backdrop: "https://media.themoviedb.org/t/p/w500_and_h282_face/rJjhOuRFldNF0OWSuSk4PiCLmeA.jpg",
+        embed: generateEmbed("tt14205554", "movie"),
         featured: true,
         type: "movie"
       },
@@ -320,7 +373,7 @@ export class MemStorage implements IStorage {
       },
       {
         id: "tt13443470",
-        title: "Wednesday",
+        title: "Wandinha",
         year: 2022,
         rating: "8.1",
         duration: null,
