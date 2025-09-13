@@ -281,7 +281,7 @@ export class MemStorage implements IStorage {
        {
         id: "tt0413573",
         title: "A Anatomia de Grey",
-        year: 2005-,
+        year: 2005,
         rating: "7.6",
         duration: null,
         seasons: 21,
@@ -302,7 +302,7 @@ export class MemStorage implements IStorage {
       {
         id: "tt5180504",
         title: "The Witcher",
-        year: 2019-,
+        year: 2019,
         rating: "8.2",
         duration: null,
         seasons: 3,
@@ -325,7 +325,7 @@ export class MemStorage implements IStorage {
       {
         id: "tt4574334",
         title: "Stranger Things",
-        year: 2016-,
+        year: 2016,
         rating: "8.7",
         duration: null,
         seasons: 4,
@@ -348,7 +348,7 @@ export class MemStorage implements IStorage {
       {
         id: "tt11198330",
         title: "House of the Dragon",
-        year: 2022-,
+        year: 2022,
         rating: "8.5",
         duration: null,
         seasons: 2,
@@ -371,7 +371,7 @@ export class MemStorage implements IStorage {
       {
         id: "tt13443470",
         title: "Wandinha",
-        year: 2022-,
+        year: 2022,
         rating: "8.1",
         duration: null,
         seasons: 2,
@@ -418,7 +418,7 @@ export class MemStorage implements IStorage {
       {
         id: "tt0460681",
         title: "Sobrenatural",
-        year: 2005-2020,
+        year: 2005,
         rating: "8.4",
         duration: null,
         seasons: 15,
@@ -441,7 +441,7 @@ export class MemStorage implements IStorage {
       {
         id: "tt0903747",
         title: "Breaking Bad",
-        year: 2008-2013,
+        year: 2008,
         rating: "9.5",
         duration: null,
         seasons: 5,
@@ -489,7 +489,7 @@ export class MemStorage implements IStorage {
       {
         id: "tt0944947",
         title: "Game of Thrones",
-        year: 2011-2019,
+        year: 2011,
         rating: "9.2",
         duration: null,
         seasons: 8,
@@ -537,7 +537,7 @@ export class MemStorage implements IStorage {
       {
         id: "tt6468322",
         title: "La Casa de Papel",
-        year: 2017-2021,
+        year: 2017,
         rating: "8.2",
         duration: null,
         seasons: 5,
