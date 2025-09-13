@@ -54,11 +54,6 @@ export class MemStorage implements IStorage {
         episodes: null,
         genre: "Animação",
         classification: "10+",
-        directors: [
-          { name: "Akiva Schaffer", photo: "https://media.themoviedb.org/t/p/w300_and_h450_bestv2/1Om7CQXHoUr4rrVrsmyutDwWfck.jpg" }
-        ],
-        creator: null,
-        creatorImage: null,
         cast: [
           { name: "Maia Kealoha", photo: "https://media.themoviedb.org/t/p/w138_and_h175_face/jqsKbBF28V2Oq5tKPR5USkNufwC.jpg" },
           { name: "Sydney Agudong", photo: "https://media.themoviedb.org/t/p/w138_and_h175_face/3K5hJ3meeClHWsPKetqd9qgyveJ.jpg" },
@@ -69,6 +64,7 @@ export class MemStorage implements IStorage {
         poster: "https://media.themoviedb.org/t/p/w300_and_h450_bestv2/bTnWeKXYU3Fal6rc8Bm4lBcEHSV.jpg",
         backdrop: "https://fiocondutor.com.pt/wp-content/uploads/2025/05/Lilo-e-Stitch-2025-scaled.webp",
         embed: generateEmbed("tt11655566", "movie"),
+        // TODO: Adicionar suporte a vídeos de trailer no futuro
         featured: true,
         type: "movie"
       },
@@ -82,8 +78,6 @@ export class MemStorage implements IStorage {
         episodes: null,
         genre: "Animação",
         classification: "L",
-        creator: null,
-        creatorImage: null,
         cast: [
           { name: "Sam Rockwell", photo: "https://media.themoviedb.org/t/p/w138_and_h175_face/vYpWxV0bnUgKo7SdasfGP9HttUq.jpg" },
           { name: "Marc Maron", photo: "https://media.themoviedb.org/t/p/w138_and_h175_face/h4vTBdmRPYioXM1dtVYMeILiasB.jpg" },
@@ -110,11 +104,6 @@ export class MemStorage implements IStorage {
         episodes: null,
         genre: "Ação",
         classification: "14+",
-        directors: [
-          { name: "Akiva Schaffer", photo: "https://media.themoviedb.org/t/p/w300_and_h450_bestv2/1Om7CQXHoUr4rrVrsmyutDwWfck.jpg" }
-        ],
-        creator: null,
-        creatorImage: null,
         cast: [
           { name: "Liam Neeson", photo: "https://media.themoviedb.org/t/p/w138_and_h175_face/sRLev3wJioBgun3ZoeAUFpkLy0D.jpg" },
           { name: "Pamela Anderson", photo: "https://media.themoviedb.org/t/p/w138_and_h175_face/sk15ch2IQ6k6vWu07Jr77yw4oj5.jpg" },
@@ -138,11 +127,6 @@ export class MemStorage implements IStorage {
         episodes: null,
         genre: "Ação",
         classification: "14+",
-        directors: [
-          { name: "James Gunn", photo: "https://m.media-amazon.com/images/M/MV5BMTYxMDgzMjA5OV5BMl5BanBnXkFtZTcwMzMwMTUxNw@@._V1_FMjpg_UX1000_.jpg" }
-        ],
-        creator: null,
-        creatorImage: null,
         cast: [
           { name: "David Corenswet", photo: "https://media.themoviedb.org/t/p/w138_and_h175_face/qB0hBMu4wU1nPrqtdUQP3sQeN5t.jpg" },
           { name: "Rachel Brosnahan", photo: "https://media.themoviedb.org/t/p/w138_and_h175_face/1f9NK43gWrXN2uMmYMlennB7jCC.jpg" },
@@ -166,8 +150,6 @@ export class MemStorage implements IStorage {
         episodes: null,
         genre: "Animação",
         classification: "10+",
-        creator: null,
-        creatorImage: null,
         cast: [
           { name: "Arden Cho", photo: "https://media.themoviedb.org/t/p/w138_and_h175_face/uPtfAFoEYeNGRl6n0GdxLPxdM9u.jpg" },
           { name: "May Hong", photo: "https://media.themoviedb.org/t/p/w138_and_h175_face/hnWIn2hxnJt16j0rDTiqdbG5LQo.jpg" },
@@ -191,11 +173,6 @@ export class MemStorage implements IStorage {
         episodes: null,
         genre: "Ficção Científica",
         classification: "12+",
-        directors: [
-          { name: "James Cameron", photo: "https://image.tmdb.org/t/p/w200/5tKTaVlBiqfTL9dZQ2Izn7kSGsf.jpg" }
-        ],
-        creator: null,
-        creatorImage: null,
         cast: [
           { name: "Sam Worthington", photo: "https://media.themoviedb.org/t/p/w138_and_h175_face/mflBcox36s9ZPbsZPVOuhf6axaJ.jpg" },
           { name: "Zoe Saldana", photo: "https://media.themoviedb.org/t/p/w138_and_h175_face/vQBwmsSOAd0JDaEcZ5p43J9xzsY.jpg" },
@@ -219,11 +196,6 @@ export class MemStorage implements IStorage {
         episodes: null,
         genre: "Ação",
         classification: "14+",
-        directors: [
-          { name: "Joseph Kosinski", photo: "https://image.tmdb.org/t/p/w200/6l2ZjSGtNWmHbpOTaXy9nVUwkUx.jpg" }
-        ],
-        creator: null,
-        creatorImage: null,
         cast: [
           { name: "Tom Cruise", photo: "https://image.tmdb.org/t/p/w200/eOh4ubpOm2Igdg0QH2ghj0mFtC.jpg" },
           { name: "Miles Teller", photo: "https://image.tmdb.org/t/p/w200/tkJ42CSwWKLGhUn0zJpwSywCKnD.jpg" },
@@ -247,11 +219,6 @@ export class MemStorage implements IStorage {
         episodes: null,
         genre: "Ficção Científica",
         classification: "14+",
-        directors: [
-          { name: "Denis Villeneuve", photo: "https://image.tmdb.org/t/p/w200/7pV3kOQgFSptm3kEZPXR1Nohpqw.jpg" }
-        ],
-        creator: null,
-        creatorImage: null,
         cast: [
           { name: "Timothée Chalamet", photo: "https://image.tmdb.org/t/p/w200/BE2sdjpgsa2rNTFa66f7upUP8DW.jpg" },
           { name: "Rebecca Ferguson", photo: "https://image.tmdb.org/t/p/w200/lJloTOheuQSirSLXLTKmraWJuQ8.jpg" },
@@ -275,11 +242,6 @@ export class MemStorage implements IStorage {
         episodes: null,
         genre: "Ação",
         classification: "14+",
-        directors: [
-          { name: "Christopher Nolan", photo: "https://media.themoviedb.org/t/p/w300_and_h450_bestv2/xuAIuYSmsUzKlUMBFGVZaWsY3DZ.jpg" }
-        ],
-        creator: null,
-        creatorImage: null,
         cast: [
           { name: "Cillian Murphy", photo: "https://media.themoviedb.org/t/p/w138_and_h175_face/llkbyWKwpfowZ6C8peBjIV9jj99.jpg" },
           { name: "Emily Blunt", photo: "https://media.themoviedb.org/t/p/w138_and_h175_face/zpJ7pupuNF3W0zTxm6yioGIoxbd.jpg" },
@@ -303,11 +265,6 @@ export class MemStorage implements IStorage {
         episodes: null,
         genre: "Ação",
         classification: "12+",
-        directors: [
-          { name: "Ryan Coogler", photo: "https://image.tmdb.org/t/p/w200/x3IKKjl0Vq5TXcn1f2Aq3YcIeG.jpg" }
-        ],
-        creator: null,
-        creatorImage: null,
         cast: [
           { name: "Letitia Wright", photo: "https://image.tmdb.org/t/p/w200/jsHJWQ7xw2u4E3K3Q3ysNf4fZXi.jpg" },
           { name: "Angela Bassett", photo: "https://image.tmdb.org/t/p/w200/upRJOPRpJj7a41DVjG4WRaPXtJ6.jpg" },
@@ -331,9 +288,6 @@ export class MemStorage implements IStorage {
         episodes: 24,
         genre: "Fantasia",
         classification: "16+",
-        directors: null,
-        creator: "Lauren Schmidt",
-        creatorImage: "https://image.tmdb.org/t/p/w200/3XKs4VCu0xP7g4BKSfnrpqHwfnS.jpg",
         cast: [
           { name: "Henry Cavill", photo: "https://image.tmdb.org/t/p/w200/2p62i8nJry6rNPGa3sDTjZEJftu.jpg" },
           { name: "Anya Chalotra", photo: "https://image.tmdb.org/t/p/w200/oWsVqiT3oLn6VGLwbLMTpU39CJH.jpg" },
@@ -357,9 +311,6 @@ export class MemStorage implements IStorage {
         episodes: 42,
         genre: "Ficção Científica",
         classification: "14+",
-        directors: null,
-        creator: "Irmãos Duffer",
-        creatorImage: "https://image.tmdb.org/t/p/w200/rAiKKKYcHfEW4xRQmZU6sXWeRlO.jpg",
         cast: [
           { name: "Millie Bobby Brown", photo: "https://image.tmdb.org/t/p/w200/1fLEy84obQrN5dfUKBFNPmnxEqF.jpg" },
           { name: "Finn Wolfhard", photo: "https://image.tmdb.org/t/p/w200/pPQd6nF1KqwJm2k4vK1UOx5rFr5.jpg" },
@@ -383,9 +334,6 @@ export class MemStorage implements IStorage {
         episodes: 18,
         genre: "Drama",
         classification: "18+",
-        directors: null,
-        creator: "Ryan Condal",
-        creatorImage: "https://image.tmdb.org/t/p/w200/tUMhZ4VVWK5rj9F8Uj9OUl8DClF.jpg",
         cast: [
           { name: "Paddy Considine", photo: "https://image.tmdb.org/t/p/w200/kPaobfnkpwBAdBWp95fT2VfPJ0o.jpg" },
           { name: "Emma D'Arcy", photo: "https://image.tmdb.org/t/p/w200/9P4RJOaG6FQpupZfBwfkX8sTGhM.jpg" },
@@ -409,9 +357,6 @@ export class MemStorage implements IStorage {
         episodes: 16,
         genre: "Comédia",
         classification: "14+",
-        directors: null,
-        creator: "Alfred Gough",
-        creatorImage: "https://image.tmdb.org/t/p/w200/5YkGLdPQY9lJpfLQx4LlmCGvhgX.jpg",
         cast: [
           { name: "Jenna Ortega", photo: "https://image.tmdb.org/t/p/w200/9I17Z4Oz8tDjfxINxlcJgGFW6Pl.jpg" },
           { name: "Catherine Zeta-Jones", photo: "https://image.tmdb.org/t/p/w200/8c06Hl6X8kFCCKKMz4wKjBtNPKZ.jpg" },
@@ -435,12 +380,6 @@ export class MemStorage implements IStorage {
         episodes: null,
         genre: "Ação",
         classification: "12+",
-        directors: [
-          { name: "Anthony Russo", photo: "https://image.tmdb.org/t/p/w200/bKBOdK8RiYrmhXXOyXH7tWcmwKJ.jpg" },
-          { name: "Joe Russo", photo: "https://image.tmdb.org/t/p/w200/bKBOdK8RiYrmhXXOyXH7tWcmwKJ.jpg" }
-        ],
-        creator: null,
-        creatorImage: null,
         cast: [
           { name: "Robert Downey Jr.", photo: "https://image.tmdb.org/t/p/w200/eOh4ubpOm2Igdg0QH2ghj0mFtC.jpg" },
           { name: "Chris Evans", photo: "https://image.tmdb.org/t/p/w200/8kBZQG1WASRrDmNkm4iJ5CqPsP6.jpg" },
@@ -465,9 +404,6 @@ export class MemStorage implements IStorage {
         episodes: 327,
         genre: "Sobrenatural",
         classification: "16+",
-        directors: null,
-        creator: "Eric Kripke",
-        creatorImage: "https://image.tmdb.org/t/p/w200/3Y6agCgNpBzj8w5JZ9KsJfEXaJ6.jpg",
         cast: [
           { name: "Jared Padalecki", photo: "https://image.tmdb.org/t/p/w200/3DpAkgDuOeJt8m4ptXnBdyJUPGu.jpg" },
           { name: "Jensen Ackles", photo: "https://image.tmdb.org/t/p/w200/lTt0wlAjnBKgDaUOEIMvxlBKdOd.jpg" },
@@ -491,9 +427,6 @@ export class MemStorage implements IStorage {
         episodes: 62,
         genre: "Drama",
         classification: "16+",
-        directors: null,
-        creator: "Vince Gilligan",
-        creatorImage: "https://image.tmdb.org/t/p/w200/vQSqLRqHpu4W0mVRX53Bj8hfWKo.jpg",
         cast: [
           { name: "Bryan Cranston", photo: "https://image.tmdb.org/t/p/w200/5XKoaXMZKbE9D0xGHTI4VGVMkGW.jpg" },
           { name: "Aaron Paul", photo: "https://image.tmdb.org/t/p/w200/khuwRCeWmjQaSTgKWfZqXm8OjhM.jpg" },
@@ -518,11 +451,6 @@ export class MemStorage implements IStorage {
         episodes: null,
         genre: "Ação",
         classification: "12+",
-        directors: [
-          { name: "Jon Watts", photo: "https://image.tmdb.org/t/p/w200/6r7rXb2mDJMF1YGxbRX3uCPqzOe.jpg" }
-        ],
-        creator: null,
-        creatorImage: null,
         cast: [
           { name: "Tom Holland", photo: "https://image.tmdb.org/t/p/w200/yQHH9Ovj7WY1Hnz56Th54tDEBpA.jpg" },
           { name: "Zendaya", photo: "https://image.tmdb.org/t/p/w200/3TdLnGi9E9s4g3x8lGdPJ3SUK4M.jpg" },
@@ -547,9 +475,6 @@ export class MemStorage implements IStorage {
         episodes: 73,
         genre: "Drama",
         classification: "18+",
-        directors: null,
-        creator: "David Benioff, D.B. Weiss",
-        creatorImage: "https://image.tmdb.org/t/p/w200/8M2L5s2z6gTgPJKZBp5k68DjxHp.jpg",
         cast: [
           { name: "Peter Dinklage", photo: "https://image.tmdb.org/t/p/w200/lYGMaOkAP8FUhAfGu6n1xZhHqjA.jpg" },
           { name: "Lena Headey", photo: "https://image.tmdb.org/t/p/w200/oMu5fvPrJKdFLAiLpBNBGhlFEEa.jpg" },
@@ -574,11 +499,6 @@ export class MemStorage implements IStorage {
         episodes: null,
         genre: "Drama",
         classification: "16+",
-        directors: [
-          { name: "Todd Phillips", photo: "https://image.tmdb.org/t/p/w200/A6FPht87DiqXzp456WjakLi2AtP.jpg" }
-        ],
-        creator: null,
-        creatorImage: null,
         cast: [
           { name: "Joaquin Phoenix", photo: "https://image.tmdb.org/t/p/w200/nnHGJPy50hJDuNIUTdOPyb6QyAl.jpg" },
           { name: "Robert De Niro", photo: "https://image.tmdb.org/t/p/w200/wj68Kaf2XJ9Zo5L6K6Vfql3nU.jpg" },
@@ -603,9 +523,6 @@ export class MemStorage implements IStorage {
         episodes: 41,
         genre: "Crime",
         classification: "16+",
-        directors: null,
-        creator: "Álex Pina",
-        creatorImage: "https://image.tmdb.org/t/p/w200/1pLtQdOtfTHDj9iQwW7yXFt5yVX.jpg",
         cast: [
           { name: "Úrsula Corberó", photo: "https://image.tmdb.org/t/p/w200/6lFT6lz4K9Z92HrLLCn9Wm8XJGR.jpg" },
           { name: "Álvaro Morte", photo: "https://image.tmdb.org/t/p/w200/4wMw2WLNJQTPdD4vF1ybFZc68tn.jpg" },

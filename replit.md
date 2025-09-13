@@ -8,6 +8,14 @@ StreamFlix is a modern streaming platform application built as a full-stack web 
 
 Preferred communication style: Simple, everyday language.
 
+## Recent Changes
+
+### UI/UX Improvements (September 2025)
+- **Enhanced Category Pages**: Completely redesigned movie and series category pages with gradient headers, animated cards, statistical displays, and color-coded visual themes for improved user engagement
+- **Simplified Search Interface**: Streamlined search functionality by removing complex filter selectors, focusing on clean input with recent search history and intelligent suggestions
+- **Optimized Favorites Management**: Simplified favorites interface by removing unnecessary category selectors while maintaining essential sorting options and movie/series tab separation
+- **Improved Category-Specific Views**: Enhanced individual category pages with rich visual headers featuring gradients, category icons, descriptions, and animated content grids with staggered loading effects
+
 ## System Architecture
 
 ### Frontend Architecture
