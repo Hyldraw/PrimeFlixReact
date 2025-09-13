@@ -423,7 +423,7 @@ export class MemStorage implements IStorage {
         duration: null,
         seasons: 15,
         episodes: 327,
-        genre: "Sobrenatural",
+        genre: "Drama",
         classification: "16+",
         cast: [
           { name: "Jared Padalecki", photo: "https://image.tmdb.org/t/p/w200/3DpAkgDuOeJt8m4ptXnBdyJUPGu.jpg" },
