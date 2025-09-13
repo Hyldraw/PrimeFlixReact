@@ -44,7 +44,77 @@ export class MemStorage implements IStorage {
 
   private initializeContent() {
     const sampleContent: Content[] = [
-       {
+        {
+        id: "tt33043892",
+        title: "Dexter: Ressurreição",
+        year: 2025,
+        rating: "9.2",
+        duration: null,
+        seasons: 1,
+        episodes: 1,
+        genre: "Crime",
+        classification: "18+",
+        cast: [
+          { name: "Michael C. Hall", photo: "https://media.themoviedb.org/t/p/w138_and_h175_face/7zUMGoujuev5PUwwv4Gl6ikB50k.jpg" },
+          { name: "Uma Thurman", photo: "https://media.themoviedb.org/t/p/w138_and_h175_face/sBgAZWi3o4FsnaTvnTNtK6jpQcF.jpg" },
+          { name: "Jack Alcott", photo: "https://media.themoviedb.org/t/p/w138_and_h175_face/jJEcVQx10KNASfMmwGE9KPRQW8u.jpg" }
+        ],
+        description: "Depois de ser baleado por seu filho Harrison, Dexter acorda do coma e descobre que ele está desaparecido. Ele o procura em Nova York para se reconciliar, mas Batista chega com perguntas do passado.",
+        fullDescription: "Depois de ser baleado por seu filho Harrison, Dexter acorda do coma e descobre que ele está desaparecido. Ele o procura em Nova York para se reconciliar, mas Batista chega com perguntas do passado.",
+        poster: "https://media.themoviedb.org/t/p/w300_and_h450_bestv2/wG6GBTreXHoBhxsFY4vVSQtYey5.jpg",
+        backdrop: "https://media.themoviedb.org/t/p/w533_and_h300_bestv2/8J0SjKToFBbg8dKpocVOCsrC77C.jpg",
+        embed: generateEmbed("tt33043892", "series"),
+        featured: true,
+        type: "series"
+      },
+      {
+        id: "tt14164730",
+        title: "Dexter: Sangue Novo",
+        year: 2021,
+        rating: "8.0",
+        duration: null,
+        seasons: 1,
+        episodes: 10,
+        genre: "Crime",
+        classification: "18+",
+        cast: [
+          { name: "Michael C. Hall", photo: "https://media.themoviedb.org/t/p/w138_and_h175_face/7zUMGoujuev5PUwwv4Gl6ikB50k.jpg" },
+          { name: "Julia Jones", photo: "https://media.themoviedb.org/t/p/w138_and_h175_face/5MDt4lh6Zwrv5aCJfTV2i3rxwXl.jpg" },
+          { name: "Jack Alcott", photo: "https://media.themoviedb.org/t/p/w138_and_h175_face/jJEcVQx10KNASfMmwGE9KPRQW8u.jpg" }
+        ],
+        description: "Estabelecido 10 anos após o desaparecimento de Dexter Morgan no olho do furacão Laura, ele agora vive sob um nome assumido no Lago de Ferro do norte de Nova Iorque, longe de sua casa original em Miami.",
+        fullDescription: "Estabelecido 10 anos após o desaparecimento de Dexter Morgan no olho do furacão Laura, ele agora vive sob um nome assumido no Lago de Ferro do norte de Nova Iorque, longe de sua casa original em Miami.",
+        poster: "https://media.themoviedb.org/t/p/w300_and_h450_bestv2/9EBKgrFIsCFSV1RZKWhYUdbtGiv.jpg",
+        backdrop: "https://media.themoviedb.org/t/p/w533_and_h300_bestv2/e6v08948EZVvLrx0sWpmglguY9e.jpg",
+        embed: generateEmbed("tt14164730", "series"),
+        featured: false,
+        type: "series"
+      },
+            {
+        id: "tt0773262",
+        title: "Dexter",
+        year: 2006,
+        rating: "8.6",
+        duration: null,
+        seasons: 8,
+        episodes: 96,
+        genre: "Crime",
+        classification: "16+",
+        cast: [
+          { name: "Michael C. Hall", photo: "https://media.themoviedb.org/t/p/w138_and_h175_face/7zUMGoujuev5PUwwv4Gl6ikB50k.jpg" },
+          { name: "Jennifer Carpenter", photo: "https://media.themoviedb.org/t/p/w138_and_h175_face/haxhKRJoWl71dAUWMLlDIaSd5bN.jpg" },
+          { name: "David Zayas", photo: "https://media.themoviedb.org/t/p/w138_and_h175_face/w1E8n9gl2HcZEhfBOXdVzMvIlzg.jpg" },
+          { name: "James Remar", photo: "https://media.themoviedb.org/t/p/w138_and_h175_face/56LwfMaMge2LmWYI46O6R2Wm0YX.jpg" }
+        ],
+        description: "De dia, o gentil Dexter é um analista de sangue para a polícia de Miami. Mas à noite, ele é um assassino en série que só atinge outros assassinos.",
+        fullDescription: "De dia, o gentil Dexter é um analista de sangue para a polícia de Miami. Mas à noite, ele é um assassino en série que só atinge outros assassinos.",
+        poster: "https://media.themoviedb.org/t/p/w300_and_h450_bestv2/tdvy2DmRjbpYCskZLWqhsWPTq4h.jpg",
+        backdrop: "https://media.themoviedb.org/t/p/w533_and_h300_bestv2/aSGSxGMTP893DPMCvMl9AdnEICE.jpg",
+        embed: generateEmbed("tt0773262", "series"),
+        featured: false,
+        type: "series"
+      },
+      {
         id: "tt11655566",
         title: "Lilo & Stitch",
         year: 2025,
