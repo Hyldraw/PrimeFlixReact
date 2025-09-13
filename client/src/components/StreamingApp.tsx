@@ -179,11 +179,11 @@ export default function StreamingApp() {
   const [favoritesActiveTab, setFavoritesActiveTab] = useState("movies"); // movies or series
   const [movieCategories] = useState([
     "Ação", "Comédia", "Drama", "Terror", "Ficção Científica", 
-    "Romance", "Aventura", "Thriller", "Fantasia", "Crime", "Animação"
+    "Romance", "Aventura", "Thriller", "Fantasia", "Crime", "Drama", "Animação"
   ]);
   const [seriesCategories] = useState([
-    "Drama", "Comédia", "Ação", "Terror", "Ficção Científica", 
-    "Romance", "Thriller", "Fantasia", "Crime", "Sobrenatural", "Animação"
+    "Ação", "Comédia", "Drama", "Terror", "Ficção Científica", 
+    "Romance", "Aventura", "Thriller", "Fantasia", "Crime", "Drama", "Animação"
   ]);
   // Touch navigation removed
   const queryClient = useQueryClient();
