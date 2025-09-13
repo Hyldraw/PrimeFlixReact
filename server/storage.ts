@@ -278,10 +278,31 @@ export class MemStorage implements IStorage {
         featured: false,
         type: "movie"
       },
+       {
+        id: "tt0413573",
+        title: "A Anatomia de Grey",
+        year: 2005-,
+        rating: "7.6",
+        duration: null,
+        seasons: 21,
+        episodes: 466,
+        genre: "Drama",
+        classification: "14+",
+        cast: [
+          { name: "Ellen Pompeo", photo: "https://media.themoviedb.org/t/p/w138_and_h175_face/yPd4G2RcjXQPNWkKUPbWh5v1flC.jpg" }
+        ],
+        description: "Drama centrado na vida pessoal e profissional de cinco estagiários e seus supervisores.",
+        fullDescription: "Drama centrado na vida pessoal e profissional de cinco estagiários e seus supervisores.",
+        poster: "https://media.themoviedb.org/t/p/w300_and_h450_bestv2/Als9Xo4MoZxJeMenHtNLOoBzqwT.jpg",
+        backdrop: "https://media.themoviedb.org/t/p/w533_and_h300_bestv2/fgvM6m7gAd8kDAaLF16aflbOSAK.jpg",
+        embed: generateEmbed("tt0413573", "series"),
+        featured: false,
+        type: "series"
+      },
       {
         id: "tt5180504",
         title: "The Witcher",
-        year: 2019,
+        year: 2019-,
         rating: "8.2",
         duration: null,
         seasons: 3,
@@ -304,7 +325,7 @@ export class MemStorage implements IStorage {
       {
         id: "tt4574334",
         title: "Stranger Things",
-        year: 2016,
+        year: 2016-,
         rating: "8.7",
         duration: null,
         seasons: 4,
@@ -327,7 +348,7 @@ export class MemStorage implements IStorage {
       {
         id: "tt11198330",
         title: "House of the Dragon",
-        year: 2022,
+        year: 2022-,
         rating: "8.5",
         duration: null,
         seasons: 2,
@@ -350,7 +371,7 @@ export class MemStorage implements IStorage {
       {
         id: "tt13443470",
         title: "Wandinha",
-        year: 2022,
+        year: 2022-,
         rating: "8.1",
         duration: null,
         seasons: 2,
@@ -397,7 +418,7 @@ export class MemStorage implements IStorage {
       {
         id: "tt0460681",
         title: "Sobrenatural",
-        year: 2005,
+        year: 2005-2020,
         rating: "8.4",
         duration: null,
         seasons: 15,
@@ -420,7 +441,7 @@ export class MemStorage implements IStorage {
       {
         id: "tt0903747",
         title: "Breaking Bad",
-        year: 2008,
+        year: 2008-2013,
         rating: "9.5",
         duration: null,
         seasons: 5,
@@ -468,7 +489,7 @@ export class MemStorage implements IStorage {
       {
         id: "tt0944947",
         title: "Game of Thrones",
-        year: 2011,
+        year: 2011-2019,
         rating: "9.2",
         duration: null,
         seasons: 8,
@@ -516,7 +537,7 @@ export class MemStorage implements IStorage {
       {
         id: "tt6468322",
         title: "La Casa de Papel",
-        year: 2017,
+        year: 2017-2021,
         rating: "8.2",
         duration: null,
         seasons: 5,
